@@ -1,0 +1,598 @@
+---
+---
+@charset "utf-8";
+$font-serif: 'Crimson Text', serif;
+$font-sans-serif: 'Raleway', sans-serif;
+
+$xl: 1140px;
+$lg: 960px;
+$md: 768px;
+$sm: 576px;
+$maincolor: #43cb83;
+$altcolor: #ff7a54;
+$white: #fff;
+$black: #000;
+$primary: #28CC9E;
+$sectionheader: #fbfbfc;
+$sheaderborder: #f2f2f2;
+html {
+	overflow-x: hidden;
+}
+body {
+	background: $white;
+	font-family: $font-sans-serif;
+	line-height: 1.7;
+	color: darken(#888, 10%);
+}
+a {
+  color: $maincolor;
+	transition: .3s all ease;
+	&:hover {
+    color: #6bd69d;
+		text-decoration: none;
+	}
+}
+p {
+  font-size: 15px;
+}
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.5;
+	font-weight: 700;
+  font-family: "Poppins";
+	color: $black;
+  text-transform: uppercase;
+}
+.section-text {
+	h2 {
+
+	}
+}
+
+
+.probootstrap-nav {
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+	right: 0;
+  background: rgba(0,0,0,.2);
+
+  .site-brand {
+    font-size: 20px;
+    a {
+      color: $white;
+    }
+  }
+  .probootstrap-toggle {
+    color: $white!important;
+    position: absolute;
+    z-index: 10;
+    right: 20px;
+    top: 20px;
+  }
+  .probootstrap-main-nav {
+  	transition: .3s all ease;
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        display: inline;
+        list-style: none;
+        a {
+          padding: 10px;
+          color: rgba(255,255,255,.5);
+        }
+        &.seperator {
+          position: relative;
+          &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 2px;
+            background: rgba(255,255,255,.1);
+          }
+        }
+      }
+    }
+    @media screen and (max-width: $md) {
+  		opacity: 0;
+  		visibility: hidden;
+  		position: absolute;
+  		height: 100vh;
+  		background: rgba(0,0,0,1);
+  		width: 300px;
+  		right: 0;
+  		top: 0;
+  		padding-top: 50px;
+  		transform: translateX(100%);
+  		
+  		z-index: 1;
+  		&.active {
+  			opacity: 1;
+  			visibility: visible;
+  			transform: translateX(0%);
+  		}
+  		ul {
+  			li {
+  				display: block;
+  				padding: 10px;
+  				a {
+						&:hover {
+							color: $white;
+						}
+  				}
+  			}
+  		}
+  	}
+  }
+}
+.bg-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.probootstrap-cover {
+  @media screen and (max-width: $md) {
+    background-color: $maincolor;
+    background-image: none;
+  }
+  @extend .bg-image;
+  background-image: url("{{ "/assets/images/hero_bg.jpg" | relative_url }}");
+	background-position: center center;
+
+  .probootstrap-heading-row {
+    height: 50vh;
+  }
+  .probootstrap-text {
+  	.probootstrap-heading {
+      @media screen and (max-width: $md) {
+        font-family: "Poppins";
+        font-size: 33px; 
+        color: $white;
+        line-height: 1.2em;
+      }
+			font-size: 50px;
+			line-height: 1;
+      font-weight: 800;
+      text-transform: uppercase;
+  	}
+  	.probootstrap-subheading {
+			p {
+				color: rgba(255,255,255,.5);
+			}
+  	}
+  }
+  .btn {
+		@media screen and (max-width: $md) {
+			width: 100%!important;
+			border: 1px solid red;
+		}
+	}
+}
+.btn {
+	border-radius: 40px;
+	padding: 20px 30px;
+	font-size: 14px;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	&:hover, &:active, &:focus {
+		outline: none;
+		box-shadow: none;
+	}
+	&.btn-primary {
+    @media screen and (max-width: $md) {
+      background-color: $white;
+      border-color: $white;
+      color: $maincolor;
+    }
+		background-color: $maincolor;
+		border-color: $maincolor;
+		color: $white;
+		&:hover, &:focus, &:active {
+			background: lighten($maincolor, 10%);
+      border-color: $maincolor;
+		}
+
+    icon {
+      padding-left: 10px;
+      font-size: 20px;
+      vertical-align: sub;
+    }
+	}
+  &.btn-bg-white {
+    @media screen and (max-width: $md) {
+      background-color: $maincolor;
+      border-color: $maincolor;
+      color: $white;
+    }
+  }
+  &.btn-alt {
+    background-color: $altcolor;
+    border: $altcolor;;
+    color: $white;
+  }
+  &.btn-offline {
+    background-color: #808080;
+    border: #f2f2f2;
+    color: $white;
+  }
+}
+.form-control {
+	border: 2px solid #ccc;
+	height: 55px;
+	&:focus, &:active {
+		border: 2px solid $black;
+	}
+}
+textarea {
+	height: inherit!important;
+}
+.probootstrap-vh-100 {
+  height: 100vh;
+  @media screen and (max-width: $md) {
+  	height: inherit;
+  	padding-top: 5em;
+  	padding-bottom: 5em;
+  }
+}
+.probootstrap-vh-75 {
+  height: 75vh;
+  @media screen and (max-width: $md) {
+  	height: inherit;
+  	padding-top: 5em;
+  	padding-bottom: 5em;
+  }
+}
+
+.bg-primary {
+	background: $primary!important;
+}
+
+.probootstrap-section,
+.probootstrap-footer {
+	padding: 7em 0;
+}
+
+.probootstrap-section-head {
+  background-color: $maincolor;
+  border: 1px solid $sheaderborder;
+  border-bottom: 1px solid $sheaderborder;
+
+  h2 {
+    color: $white;
+    margin: 0;
+  }
+}
+
+.probootstrap-section-services,
+.probootstrap-section-faq {
+  padding: 2em 0;
+  li {
+    list-style-type: none;
+  }
+  icon {
+    padding-right: 1em;
+    color: $maincolor;
+  }
+}
+
+.probootstrap-section-faq {
+  h6 {
+    text-transform: none;
+
+    &:before {
+      content: "Q.";
+      color: $maincolor;
+      padding-right: 0.25rem;
+    }
+  }
+}
+
+.probootstrap-section.main-features {
+  @media screen and (max-width: $md) {
+    .col-lg-4 {
+      padding-top: 2em;
+    }
+
+    .col-lg-4:first-child {
+      padding-top: 0;
+    }
+  }
+  icon {
+    color: $white;
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .col-lg-4 span {
+    display: inline-block;
+    background-color: $maincolor;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+  }
+}
+
+.probootstrap-section.alt-section {
+  background-color: $maincolor;
+
+  h1,h4 {
+    color: $white;
+  }
+
+  h1 {
+    font-size: 52px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
+.probootstrap-section.customer-reviews {
+  icon {
+    font-size: 80px;
+    opacity: .2;
+    position: absolute;
+    top: -14px;
+    left: 0;
+    right: 0;
+  }
+
+  h6 {
+    color: #6f6f6f;
+  }
+}
+
+.probootstrap-footer {
+	background: #323232;
+	a {
+		color: $white;
+		&:hover {
+			color: $primary;
+		}
+	}
+
+  p, table {
+    color: $white;
+    /*font-size: 12px;*/
+    font-family: "Poppins";
+  }
+
+  h5 {
+    color: $white
+  }
+	.probootstrap-heading {
+		color: $white;
+		font-size: 24px;
+	}
+	.probootstrap-heading-2 {
+		font-size: 14px;
+		font-weight: bold;
+		letter-spacing: .05em;
+		color: $white;
+		color: rgba($white, .5);
+		text-transform: uppercase;
+	}
+  .probootstrap-heading {
+    img {
+      width: 140px;
+    }
+  }
+}
+.probootstrap-item {
+	display: block;
+}
+.probootstrap-image-grid {
+	> div {
+		padding-left: 0;
+		padding-right: 0;
+		> div {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+.probootstrap-img-item {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	.icon {
+		position: absolute;
+		color: $white;
+		z-index: 9;
+		top: 50%;
+		font-size: 30px;
+		margin: 20px 0 0 0;
+		padding: 0;
+		line-height: 0;
+		left: 50%;
+		opacity: 0;
+		visibility: hidden;
+		transform: translate(-50%,  -50%);
+		transition: .3s all ease;
+	}
+	> div {
+		@extend .bg-image;
+		height: 280px;	
+		transition: .5s all ease;
+		transform: scale(1.2);
+		@media screen and (max-width: $xl) {
+			height: 200px;
+		}
+		@media screen and (max-width: $sm) {
+			height: 280px;
+		}
+		&:before {
+			transition: .5s all ease;
+			background: rgba(0,0,0,.5);
+			position: absolute;
+			content: "";
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+	&:hover {
+		.icon {
+			margin-top: 0;
+			transform: translate(-50%,  -50%);
+			opacity: 1;
+			visibility: visible;
+		}
+		> div {
+			transform: scale(1.0);
+			&:before {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}
+.probootstrap-section-feature {
+	@extend .bg-image;
+	background-image: url(../images/cover_bg.svg);
+	background-position: center center;
+	.probootstrap-heading {
+		color: $white;
+	}
+	.probootstrap-device {
+		top: 0;
+		position: absolute;
+		max-width: 470px;
+		@media screen and (max-width: $md) {
+			position: relative;
+			top: inherit;
+			margin-bottom: -330px
+		}
+	}
+	h3 {
+		color: $white;
+	}
+	p {
+		color: rgba(255,255,255,.4);
+	}
+}
+
+.probootstrap-navabr-dark {
+	left: 0;
+	right: 0;
+	@media screen and (max-width: $lg) {
+		background: $white!important;
+		top: 0;
+		position: relative;
+	}
+	.navbar-nav {
+		> .nav-item {
+			> .nav-link {
+				padding-top: 20px;
+				padding-bottom: 20px;
+				padding-left: 20px;
+				padding-right: 20px;
+        font-family: Poppins,sans-serif;
+        text-transform: uppercase;
+        color: #43cb83;
+        font-weight: 700;
+        font-size: .75rem;
+				@media screen and (max-width: $lg) {
+					padding-top: 10px;
+					padding-bottom: 10px;
+					padding-left: 0px;
+					padding-right: 0px;
+				}
+        &.active {
+          color: $black;
+        }
+			}
+			&.probootstrap-cta {
+				a {
+					color: $maincolor;
+				}
+			}
+			&.probootstrap-seperator {
+				position: relative;
+				background-color: $maincolor;
+          a {
+            @media screen and (max-width: $md) {
+              font-size: 16px;
+              letter-spacing: 0.20rem;
+            }
+            color: $white;
+            span {
+              padding-right: 7px;
+            }
+          }
+				@media screen and (max-width: $lg) {
+					padding-left: 0;
+					margin-left: 0;
+          text-align: center;
+				}
+			}
+		}
+	}
+  .navbar-brand {
+    img {
+      @media screen and (max-width: $md) {
+        width: 140px;
+      }
+      width: 170px;
+    } 
+  }
+}
+.probootstrap-footer-social {
+	li {
+		list-style: none;
+		margin: 0 10px 10px 0;
+		display: inline-block;
+		a {
+			height: 70px;
+			width: 70px;
+			display: block;
+			float: left;
+			background: rgba($white, .1);
+			border-radius: 50%;
+			position: relative;
+			icon {
+				position: absolute;
+				font-size: 30px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+}
+.footer-small-nav {
+	> li {
+		font-size: 13px;
+		display: inline-block;
+		a {
+			color: rgba($white, .4);
+			margin: 0 10px 10px 0;
+			&:hover, &:focus {
+				color: $primary;
+			}
+		}
+	}
+}
+.media {
+	.probootstrap-icon {
+		width: 100px;
+		span {
+			color: $primary;
+		}
+	}
+}
+.probootstrap-overflow-hidden {
+	overflow: hidden;
+}

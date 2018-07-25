@@ -1,0 +1,113 @@
+---
+layout: page
+title: "Services"
+---
+
+<section class="probootstrap-section-services">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <h4>Bedroom</h4>
+        <li><icon class="icon-check"></icon>Dusting furniture</li>
+        <li><icon class="icon-check"></icon>Dusting blinds</li>
+        <li><icon class="icon-check"></icon>Baseboards</li>
+        <li><icon class="icon-check"></icon>Vacuuming carpets or washing floors</li>
+      </div>
+      <div class="col-md-6 mb-4">
+        <h4>Bathroom</h4>
+        <li><icon class="icon-check"></icon>Sinks and Mirrors</li>
+        <li><icon class="icon-check"></icon>Toilet bowl</li>
+        <li><icon class="icon-check"></icon>Cabinets outside</li>
+        <li><icon class="icon-check"></icon>Showers: tiles and glass door</li>
+        <li><icon class="icon-check"></icon>Bathtub</li>
+        <li><icon class="icon-check"></icon>Floors (by hand)</li>
+        <li><icon class="icon-check"></icon>Baseboards</li>
+      </div>
+      <div class="col-md-6 mb-4">
+        <h4>Living Room</h4>
+        <li><icon class="icon-check"></icon>Dusting furniture</li>
+        <li><icon class="icon-check"></icon>Dusting blinds</li>
+        <li><icon class="icon-check"></icon>Baseboards</li>
+        <li><icon class="icon-check"></icon>Vacuuming carpets or washing floors</li>
+      </div>
+      <div class="col-md-6 mb-4">
+        <h4>Kitchen</h4>
+        <li><icon class="icon-check"></icon>Sink</li>
+        <li><icon class="icon-check"></icon>Microwave Oven</li>
+        <li><icon class="icon-check"></icon>Stove (Outside)</li>
+        <li><icon class="icon-check"></icon>Kitchen appliances (Outside)</li>
+        <li><icon class="icon-check"></icon>Cabinets (Outside)</li>
+        <li><icon class="icon-check"></icon>Kitchen counters</li>
+        <li><icon class="icon-check"></icon>Floors</li>
+        <li><icon class="icon-check"></icon>Baseboards</li>
+      </div> 
+      <div class="col-md-6 mb-4">
+        <h4>Hallways</h4>
+        <li><icon class="icon-check"></icon>Vacuuming carpets</li>
+        <li><icon class="icon-check"></icon>Floors</li>
+        <li><icon class="icon-check"></icon>Vacuuming or cleaning stairs</li>
+        <li><icon class="icon-check"></icon>Wiping stair railings</li>
+        <li><icon class="icon-check"></icon>Dusting picture frames</li>
+        <li><icon class="icon-check"></icon>Baseboards</li>
+      </div>
+      <div class="col-md-6 mb-4">
+        <h4>Laundry</h4>
+        <li><icon class="icon-check"></icon>Wiping washer and dryer</li>
+        <li><icon class="icon-check"></icon>Floors</li>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mt-4">
+        <h4>Additional Services</h4>
+        <p>In addition to our Standard Cleaning we provide other services you may need</p>
+      </div>
+    </div>
+    <div class="row addition-services">
+      <div class="col-md-6">
+        <li><icon class="icon-plus"></icon>Wash windows</li>
+        <li><icon class="icon-plus"></icon>Move in/Out</li>
+        <li><icon class="icon-plus"></icon>Inside Cabinets</li>
+      </div>
+      <div class="col-md-6 mb-4">
+        <li><icon class="icon-plus"></icon>Inside of Stove</li>
+        <li><icon class="icon-plus"></icon>Inside of Refrigerator</li>
+        <li><icon class="icon-plus"></icon>Changing sheets/making beds</li>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="probootstrap-section-head">
+  <div class="container">
+    <div class="row">
+      <div class="col my-5">
+        <h2>Areas we Service</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="probootstrap-section">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col">
+        <p>The map below shows outlines of the the general area we service. The <span style="color:#1BBF3C">green</span> area is included in all services. We provide services in the <span style="color:#F1D415">yellow</span> area for an additional gas fee. The map is just an estimate to find out specific pricing contact us at <a href="tel:{{ site.phone_number }}">{{ site.phone_number }}</a> or <a href="{{ "/contact.html" | relative_url }}">send us a message</a></p>
+        <h6 class="d-md-none should-show-map">Touch the map to zoom in</h6>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col">
+        <div class='zoom' id='ex1'>
+          <img id="map" src="{{ "/assets/images/service_area.png" | relative_url }}" width="708" height="431" class="img-fluid zoomable-image">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- include section_alt_promo.html -%}
