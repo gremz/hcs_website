@@ -487,6 +487,7 @@ textarea {
 .probootstrap-navabr-dark {
 	left: 0;
 	right: 0;
+  background-color: $white !important;
 	@media screen and (max-width: $lg) {
 		background: $white!important;
 		top: 0;
