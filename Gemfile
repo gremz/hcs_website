@@ -20,6 +20,7 @@ gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem 'jekyll-sitemap', '~> 1.2'
+  gem 'jekyll-redirect-from', '~> 0.14.0'
   # gem "jekyll-feed", "~> 0.6"
 end
 

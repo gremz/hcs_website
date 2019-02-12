@@ -244,6 +244,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll (~> 3.7.4)
+  jekyll-redirect-from (~> 0.14.0)
   jekyll-sitemap (~> 1.2)
   minima (~> 2.0)
 
