@@ -139,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
     background-image: none;
   }
   @extend .bg-image;
-  background-image: url("{{ "/assets/images/hero_bg.jpg" | relative_url }}");
+  background-image: url("{{ "/assets/images/cleaning-lady-clean-home-helenas.jpg" | relative_url }}");
 	background-position: center center;
 
   .probootstrap-heading-row {
