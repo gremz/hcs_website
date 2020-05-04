@@ -122,7 +122,6 @@ $(function(){
         var $estimateResult = $estimateForm.find('.form-result')
         $estimateForm.submit(function(e) {
           e.preventDefault();
-          console.log("Submit to Firebase");
           $estimateForm.find('.submit-estimate').prop('disabled', true);
           $estimateResult.html("").removeClass('alert alert-danger');
 
@@ -133,15 +132,20 @@ $(function(){
             data[val['name']] = val['value'];
           });
 
-          $.post("https://services.helenascleaning.com/send.php", data)
-            .done(function(data) {
-            console.log(data);
-            if (data["errors"]) {
-              $estimateResult.html(data["errors"].map(function(e) { return "<li>" + e + "</li>"; })).addClass('alert alert-danger');
+          $.post("https://13n8iqdkt2.execute-api.us-west-2.amazonaws.com/prod/sendEmail", JSON.stringify(data), function(responseData) {
+            console.log(responseData);
+            $estimateResult.html('Your Estimate request has been submitted. We will get back to you as soon as possible').addClass('alert alert-success');
+          }, 'json').fail(function(responseObject) {
+            var responseErrorHtml = "";
+            var responseData = responseObject.responseJSON && responseObject.responseJSON.errors;
+
+            if (responseData) {
+              responseErrorHtml = responseData.map(function(e) { return "<li>" + e + "</li>"; })
+              responseErrorHtml.push("<li>If you're still having issues please reach out to us: info@helenascleaning.com.</li>")
+              $estimateResult.html(responseErrorHtml).addClass('alert alert-danger');
               $estimateForm.find('.submit-estimate').prop('disabled', false);
-            } else {
-              $estimateResult.html('Your Estimate request has been submitted. We will get back to you as soon as possible').addClass('alert alert-success');
             }
+            $estimateResult
           });
         });
       }
