@@ -3,6 +3,13 @@ layout: page
 title: "Estimate"
 ---
 
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+  const onEstimateSubmit = () => {
+    console.log('passed captcha');
+  }
+</script>
+
 <section class="probootstrap-section">
   <div class="container">
     <div class="row text-center pb-5 estimate-header">
@@ -76,7 +83,11 @@ title: "Estimate"
       </div>
         <div>
           <!-- <div>By providing a telephone number and submitting this form you are consenting to be contacted by SMS text message. Message & data rates may apply. You can reply STOP to opt-out of further messaging.</div> -->
-          <button class="btn btn-primary btn-bg-white btn-lg btn-block submit-estimate" type="submit">Submit</button>
+          <button class="btn btn-primary btn-bg-white btn-lg btn-block submit-estimate recaptcha"
+          type="submit"
+          data-sitekey="6LfKAC8sAAAAAAW3e6wrRh0bXajU65x_sfJxvL7l" 
+          data-callback='onEstimateSubmit' 
+          data-action='submit'>Submit</button>
         </div>
         <div class="my-3 form-result"></div>
       </form>
