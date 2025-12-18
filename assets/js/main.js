@@ -120,8 +120,8 @@ $(function(){
       if ($('.estimate-form').length) {
         var $estimateForm = $('.estimate-form');
         var $estimateResult = $estimateForm.find('.form-result')
-        $estimateForm.submit(function(e) {
-          e.preventDefault();
+
+        window.sendEstimateForm = () => {
           $estimateForm.find('.submit-estimate').prop('disabled', true);
           $estimateResult.html("").removeClass('alert alert-danger');
 
@@ -147,6 +147,12 @@ $(function(){
             }
             $estimateResult
           });
+        };
+
+        $estimateForm.submit(function(e) {
+          e.preventDefault();
+
+          grecaptcha.execute();
         });
       }
 });
