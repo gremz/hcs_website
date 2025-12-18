@@ -122,6 +122,9 @@ $(function(){
         var $estimateResult = $estimateForm.find('.form-result')
         $estimateForm.submit(function(e) {
           e.preventDefault();
+
+          grecaptcha.execute();
+
           $estimateForm.find('.submit-estimate').prop('disabled', true);
           $estimateResult.html("").removeClass('alert alert-danger');
 
